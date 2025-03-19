@@ -1,0 +1,297 @@
+Day 3===============================================>
+
+To print character value-------------------------------->
+import java.util.Scanner;
+
+class Main {
+    public static void main(String[] args) {
+       Scanner input = new Scanner(System.in);
+       System.out.println("enter character value:");
+       char ch=input.nextLine().charAt(0);
+       System.out.println(" character :"+ch);
+    }
+}
+
+
+Static and non static --------------------------------------->
+class Main {
+    public static void main(String[] args) {
+        System.out.println(Objectoriented.a);
+        Objectoriented.display();
+    }
+}
+class Objectoriented{
+    static int a=10;
+     public static void display(){
+        System.out.println("Static Method");
+    }
+}
+
+
+Static and non static --------------------------------------->
+
+class Main {
+    public static void main(String[] args) {
+        Objectoriented ref=new Objectoriented();
+        System.out.println("Non-static variable:"+ref.name);
+        System.out.println("Non-static variable:"+ref.rollno);
+        System.out.println("static variable:"+Objectoriented.a);
+        Objectoriented.display();
+    }
+}
+class Objectoriented{
+    String name="java";
+    String rollno="2332J19";
+    static int a=10;
+     public static void display(){
+        System.out.println("Static Method");
+    }
+}
+
+
+
+Default constructor--------------->
+class Main {
+    public static void main(String[] args) {
+        Sample ref=new Sample();
+    }
+}
+class Sample{
+    Sample(){
+        System.out.println("Default:");
+    }
+}
+
+
+
+class Main {
+    public static void main(String[] args) {
+        Sample ref=new Sample("BMW",1);
+        Sample ref1=new Sample("Ford",2);
+        System.out.println(ref.carname);
+        System.out.println(ref.carmodel);
+        System.out.println(ref1.carname);
+        System.out.println(ref1.carmodel);
+    }
+}
+class Sample{
+    String carname;
+    int carmodel;
+    Sample(String carname,int carmodel){
+        this.carname=carname;
+        this.carmodel=carmodel;
+        System.out.println("Default:");
+    }
+}
+
+
+Encapsulation------------------------------------------>
+there are 2 methods:
+get---------------------------------------------------------------->
+class Main {
+    public static void main(String[] args) {
+    Account acc=new Account("Priya",20000);  
+    System.out.println(acc.getaccholder());
+    System.out.println(acc.getbalance());
+}
+}
+class Account{
+  private String accholder;
+  private int balance;
+  Account(String accholder,int balance){
+      this.accholder=accholder;
+      this.balance=balance;
+  }
+    public String getaccholder(){
+        return accholder;
+    }
+    public int getbalance(){
+        return balance;
+    }
+}
+
+set------------------------------------------------->
+class Main {
+    public static void main(String[] args) {
+    Account acc=new Account("Priya",20000);  
+    System.out.println(acc.getaccholder());
+    System.out.println(acc.getbalance());
+    acc.setaccholder("shreya");
+    System.out.println("Update accholder name:"+acc.getaccholder());
+}
+}
+class Account{
+  private String accholder;
+  private int balance;
+  Account(String accholder,int balance){
+      this.accholder=accholder;
+      this.balance=balance;
+  }
+    public String getaccholder(){
+        return accholder;
+    }
+    public int getbalance(){
+        return balance;
+    }
+    public void setaccholder(String accholder){
+        this.accholder=accholder;
+    }
+}
+
+
+
+class Main {
+    public static void main(String[] args) {
+    Account acc=new Account("Priya",20000);  
+    System.out.println(acc.getaccholder());
+    System.out.println(acc.getbalance());
+    acc.setaccholder("shreya");
+    System.out.println("Updated accholder name:"+acc.getaccholder());
+    acc.setbalance(acc.getbalance()+2000);
+     System.out.println("Updated balance:"+acc.getbalance());
+}
+}
+class Account{
+  private String accholder;
+  private int balance;
+  Account(String accholder,int balance){
+      this.accholder=accholder;
+      this.balance=balance;
+  }
+    public String getaccholder(){
+        return accholder;
+    }
+    public int getbalance(){
+        return balance;
+    }
+    public void setaccholder(String accholder){
+        this.accholder=accholder;
+    }
+    public void setbalance(int balance){
+        this.balance=balance;
+    }
+}
+
+
+
+
+
+import java.util.Scanner;
+class Main {
+    public static void main(String[] args) {
+        Scanner input = new Scanner(System.in);
+    Account acc=new Account("Priya",20000);  
+    System.out.println("Accountholders name:"+acc.getaccholder());
+    System.out.println("balance:"+acc.getbalance());
+    acc.setaccholder("shreya");
+    System.out.println("Updated accholder name:"+acc.getaccholder());
+    System.out.println("enter credit amount:");
+    int amount=input.nextInt();
+    System.out.println("balance:"+(acc.getbalance()+amount));
+      System.out.println("enter withdraw amount:");
+      int amt=input.nextInt();
+     System.out.println("balance:"+(acc.getbalance()-amt));
+}
+}
+class Account{
+  private String accholder;
+  private int balance;
+  Account(String accholder,int balance){
+      this.accholder=accholder;
+      this.balance=balance;
+  }
+    public String getaccholder(){
+        return accholder;
+    }
+    public int getbalance(){
+        return balance;
+    }
+    public void setaccholder(String accholder){
+        this.accholder=accholder;
+    }
+    public void setbalance(int amount){
+        if(amount>0)
+        balance+=amount;
+        System.out.println("deposited successfully:"+balance);
+    }
+}
+
+
+
+
+class Main {
+    public static void main(String[] args) {
+    Account acc=new Account("Priya",20000);  
+    System.out.println("Accountholders name:"+acc.getaccholder());
+    System.out.println("balance:"+acc.getbalance());
+    acc.setaccholder("shreya");
+    System.out.println("Updated accholder name:"+acc.getaccholder());
+    acc.setbalance(3000);
+}
+}
+class Account{
+  private String accholder;
+  private int balance;
+  Account(String accholder,int balance){
+      this.accholder=accholder;
+      this.balance=balance;
+  }
+    public String getaccholder(){
+        return accholder;
+    }
+    public int getbalance(){
+        return balance;
+    }
+    public void setaccholder(String accholder){
+        this.accholder=accholder;
+    }
+    public void setbalance(int amount){
+        if(amount>0)
+        balance+=amount;
+        System.out.println("deposited successfully:"+balance);
+        
+    }
+}
+
+
+
+class Main {
+    public static void main(String[] args) {
+    Account acc=new Account("Priya",20000);  
+    System.out.println("Accountholders name:"+acc.getaccholder());
+    System.out.println("balance:"+acc.getbalance());
+    acc.setaccholder("shreya");
+    System.out.println("Updated accholder name:"+acc.getaccholder());
+    acc.setbalance(3000);
+     acc.setwithdraw(100);
+    
+}
+}
+class Account{
+  private String accholder;
+  private int balance;
+  private int withdraw;
+  Account(String accholder,int balance){
+      this.accholder=accholder;
+      this.balance=balance;
+      this.withdraw=withdraw;
+  }
+    public String getaccholder(){
+        return accholder;
+    }
+    public int getbalance(){
+        return balance;
+    }
+    public void setaccholder(String accholder){
+        this.accholder=accholder;
+    }
+    public void setbalance(int amount){
+        if(amount>0)
+        balance+=amount;
+        System.out.println("deposited successfully:"+balance);}
+     public void setwithdraw(int amt){
+        if(amt>0)
+        withdraw-=amt;
+        System.out.println("withdrawn successfully:"+withdraw);}
+    
+}
